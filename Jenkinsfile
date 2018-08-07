@@ -1,8 +1,10 @@
 pipeline {
+  def version = 'teste'
   agent any
   stages{
     stage('Init') {
       steps {
+        checkout scm
         echo "Testing..."
       }
     }
