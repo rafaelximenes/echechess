@@ -1,5 +1,5 @@
+def version = 'teste'
 pipeline {
-  def version = 'teste'
   agent any
   stages{
     stage('Init') {
