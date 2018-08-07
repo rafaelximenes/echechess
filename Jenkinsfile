@@ -2,15 +2,15 @@ def version = 'teste'
 pipeline {
   agent any
   stages{
-    stage('Init') {
+    stage('Checkout') {
       steps {
         checkout scm
         echo "Testing..."
       }
     }
-    stage('Build') {
+    stage('Test') {
       steps {
-        echo "Building..."
+        sh "mvn clean verify package"
       }
     }
     stage('Deploy') {
