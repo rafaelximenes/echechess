@@ -1,6 +1,9 @@
 def version = 'teste'
 pipeline {
   agent any
+  tools {
+     maven 'localMaven'
+  }
   stages{
     stage('Checkout') {
       steps {
