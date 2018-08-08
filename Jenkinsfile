@@ -16,7 +16,6 @@ pipeline {
         withSonarQubeEnv('teste') {
           sh 'mvn clean package sonar:sonar'
         }
-        sh "mvn clean verify package"
       }
     }
     stage('Deploy') {
