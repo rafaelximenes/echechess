@@ -13,6 +13,9 @@ pipeline {
     }
     stage('Test') {
       steps {
+        withSonarQubeEnv('teste') {
+          sh 'mvn clean package sonar:sonar'
+        }
         sh "mvn clean verify package"
       }
     }
